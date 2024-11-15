@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Job</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+  <style>
+    .bg-custom {
+      background-color: #2c0033;
+    }
+    .bg-custom2{
+      background-color:  #f80d8;
+    }
+ 
+    .section-title {
+      border-bottom: 2px solid#2c0033;
+      margin-bottom: 1rem;
+    }
+    .btnbg{
+       background-color: #4f1ab1;
+    }
+    .checkbox-small {
+        width: 1.25rem;  /* Adjust width */
+        height: 1.25rem; /* Adjust height */
+    }
+  </style>
+</head>
+<header>
+      <!-- Navbar start -->
+      <nav class="text-white px-6 py-4 fixed top-0 w-full z-50 bg-custom">
+        <div class="container mx-auto flex justify-between items-center">
+          
+          <!-- Logo start -->
+          <div class="text-2xl font-bold text-custom-yellow">
+            <a href="Home.html" className="text-2xl font-bold text-custom-yellow">
+              PartTimeJobBD
+            </a>
+            
+          </div>
+          <!-- Logo end -->
+          <!-- Middle Buttons -->
+          <div class="flex space-x-8">
+            <div class="relative group">
+                <a href="Home.html" class="text-white px-4 py-2">Overview</a>
+                <div class="absolute bottom-[-4px] left-0 w-full h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
+            </div>
+            
+            <div class="relative group">
+                <a href="Carriertips.html" class="text-white px-4 py-2">Career Tips</a>
+                <div class="absolute bottom-[-4px] left-0 w-full h-0.5 bg-white  scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
+            </div>
+        </div>
+         <!-- Middle Buttons ends -->
+        
+          
+          <!-- Right Buttons -->
+          <div class="space-x-4">
+          <a href="JobseekerProfile.html"class=" border  bg-transparent text-custom-yellow hover:bg-gray-200 hover:text-black px-4 py-2 rounded transition">Profile</a>
+          </div>
+         <!-- Right Buttons ends -->
+        </div>
+      </nav>
+      <!-- Navbar ends -->
+</header>
+<body class="bg-custom2 pb-10">
+  <!-- Header Section -->
+  <header>
+    <section 
+    class="bg-white p-32 rounded bg-cover bg-center" 
+    style="background-image: url('./Immages/Hiring1.jpg');">
+    <div class="container mx-auto mt-10 p-6 bg-white bg-opacity-40 rounded">
+      <h1 class="text-center font-bold text-6xl mb-5 pb-14">
+        In-demand employers for <br>every career path
+      </h1>
+      <!-- Search Bar -->
+      <div class="flex justify-center mb-6">
+        <input type="text" placeholder="Search for jobs..." class="input input-bordered w-full md:w-1/2" />
+        <button class="btn btn- ml-4">Search</button>
+      </div>
+    </div>
+  </section>
+  
+    
+  </header>
+
+  <!-- Main Content Section -->
+  <div class="container mx-auto mt- p-12">
+    <div class="flex flex-col lg:flex-row gap-12 p-12">
+      <!-- Job Filter Sidebar -->
+      <div class="w-full lg:w-1/4 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold mb-4">Search By Filters</h2>
+
+        <!-- Search By Keywords -->
+        <input type="text" class="input input-bordered w-full btn-sm mb-4" placeholder="Search by keywords...">
+
+        <!-- Location Filter -->
+        <input type="text" class="input input-bordered w-full mb-4 btn-sm" placeholder="Search Location...">
+
+        <!-- Job Category Filter -->
+        <select class="select select-bordered w-full mb-4 btn-sm">
+          <option disabled selected>Choose a Category</option>
+          <option>Technology</option>
+          <option>Healthcare</option>
+          <option>Finance</option>
+          <option>Marketing</option>
+        </select>
+
+        <!-- Date Posted Filter -->
+        <input type="date" class="input input-bordered w-full mb-4 btn-sm" placeholder="Date Posted">
+
+        <!-- Team Size Filter -->
+        <div class="mb-6 ">
+          <h3 class="font-semibold mb-2">Team Size</h3>
+          <label class="label cursor-pointer">
+            <input type="checkbox" class="checkbox checkbox-primary " />
+            <span class="label-text">1-20 (130)</span>
+          </label>
+          <label class="label cursor-pointer">
+            <input type="checkbox" class="checkbox checkbox-primary" />
+            <span class="label-text">21-50 (80)</span>
+          </label>
+          <label class="label cursor-pointer">
+            <input type="checkbox" class="checkbox checkbox-primary" />
+            <span class="label-text">51-100 (50)</span>
+          </label>
+        </div>
+
+        <!-- Sector Filter -->
+        <div class="mb-6">
+          <h3 class="font-semibold mb-2">Sector</h3>
+          <label class="label cursor-pointer">
+            <input type="checkbox" class="checkbox checkbox-primary" />
+            <span class="label-text">Development</span>
+          </label>
+          <label class="label cursor-pointer">
+            <input type="checkbox" class="checkbox checkbox-primary" />
+            <span class="label-text">Design</span>
+          </label>
+          <label class="label cursor-pointer">
+            <input type="checkbox" class="checkbox checkbox-primary" />
+            <span class="label-text">Marketing</span>
+          </label>
+        </div>
+
+        <!-- Find Job Button -->
+        <button class="btn btnbg btn-sm p- w-full">Find Job</button>
+      </div>
+
+      <!-- Job Listings Section -->
+      <div class="w-full lg:w-3/4">
+        <!-- Job Categories Section -->
+        <div class="mb-10">
+          <h2 class="text-xl font-semibold mb-6">Job Categories</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <button class="card p-1 btn-md items-center justify-center border-black bg-white rounded-lg shadow hover:shadow-lg transition-all"> 
+              <h3 class="font-medium ">Tution</h3>
+            </button>
+            <button class="card p-4 bg-white p-1 btn-md items-center justify-center rounded-lg shadow hover:shadow-lg transition-all">
+              <h3 class="font-medium">Technology</h3>
+            </button>
+            <button class="card p-4 bg-white rounded-lg p-1 btn-md items-center justify-center shadow hover:shadow-lg transition-all">
+              <h3 class="font-medium">Showroom</h3>
+            </button>
+            <button class="card p-4 bg-white rounded-lg p-1 btn-md items-center justify-center shadow hover:shadow-lg transition-all">
+              <h3 class="font-medium">Resturant</h3>
+            </button>
+            <button class="card p-4 bg-white rounded-lg p-1 btn-md items-center justify-center shadow hover:shadow-lg transition-all">
+              <h3 class="font-medium">Resturant</h3>
+            </button>
+            <button class="card p-4 bg-white rounded-lg p-1 btn-md items-center justify-center shadow hover:shadow-lg transition-all">
+              <h3 class="font-medium">Resturant</h3>
+            </button>
+            <button class="card p-4 bg-white rounded-lg p-1 btn-md items-center justify-center shadow hover:shadow-lg transition-all">
+              <h3 class="font-medium">Resturant</h3>
+            </button>
+            <button class="card p-4  bg-violet-300 rounded-lg p-1 btn-md items-center justify-center shadow hover:shadow-lg transition-all">
+              <h3 class="font-medium">Show more ...</h3>
+            </button> 
+          </div>
+        </div>
+
+        <!-- Suggested Jobs Section -->
+        <div class="mb-10">
+          <h2 class="text-xl font-semibold mb-6">Suggested Jobs <span><a href="">(16+)</a></span></h2>
+          <div class="space-y-4">
+            <div class="card p-4 bg-white rounded-lg shadow">
+                <img class="w-1/6" src="./Immages//Microsoft logo.png" alt="">
+              <h3 class="font-medium">Junior Software Developer</h3>
+              <p class="text-gray-600">Company: Tech Innovations</p>
+              <p class="text-gray-600">Location: Remote</p>
+              <button class="btn btn-sm btnbg mt-2 w-1/6">Apply Now</button>
+            </div>
+            <div class="card p-4 bg-white rounded-lg shadow">
+                <img class="w-1/6" src="./Immages/Google logo.png" alt="">
+              <h3 class="font-medium">Marketing Intern</h3>
+              <p class="text-gray-600">Company: Creative Agency</p>
+              <p class="text-gray-600">Location: New York, NY</p>
+              <button class="btn btn-sm btnbg mt-2 w-1/6">Apply Now</button>
+            </div>
+          </div>
+           <!-- See More Button -->
+           <div class="flex justify-end mt-4">
+            <button class="btn btn-sm btn-outline btn-primary">See More</button>
+          </div>
+        </div>
+
+        <!-- All Jobs Section -->
+        <div class="mb-10">
+          <h2 class="text-xl font-semibold mb-6">All Open Jobs <span><a href="">(156+)</a></span></h2>
+          <div class="space-y-4">
+            <div class="card p-4 bg-white rounded-lg shadow">
+                <img class="w-1/6" src="./Immages/Facebook logo.png" alt="">
+              <h3 class="font-medium">Web Developer</h3>
+              <p class="text-gray-600">Company: Web Works</p>
+              <p class="text-gray-600">Location: Remote</p>
+              <button class="btn btn-sm btnbg mt-2 w-1/6">Apply Now</button>
+            </div>
+          </div>
+          <!-- See More Button -->
+          <div class="flex justify-end mt-4">
+            <button class="btn btn-sm btn-outline btn-primary">See More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"data-theme="cupcake">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recruiter Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+  <style>
+    .bg-custom{
+        background-color: #2c0033;
+    }
+  </style>
+</head>
+<body class="bg-custom pb-9">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-3">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <span class="text-lg font-semibold">PartTimeJobBD</span>
+      </div>
+      <!-- Profile Info -->
+         <!-- Middle Buttons -->
+         <div class="flex space-x-8">
+          <div class="relative group">
+            <a href="postJob.html" class="text-black px-4 py-2 hover:bg-purple-300 p-6 rounded-lg">Post Jobs</a>
+
+              <div class="absolute bottom-[-4px] left-0 w-full h-0.5 bg-white  scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
+          </div>
+      </div>
+       <!-- Middle Buttons ends -->
+      <div class="flex items-center space-x-4">
+        
+        <div class="text-sm">
+          <p class="font-medium">ABC Recruiter</p>
+          <p>abc11@email.com</p>
+        </div>
+        <img src="./Immages/sagor.jpg" alt="Profile Picture" class="w-8 h-8 rounded-full">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Form -->
+  <div class=" mx-auto mt-10 p-16 bg-white shadow-md rounded-lg max-w-6xl">
+    <form action="#" method="POST" class="space-y-4">
+      <!-- Name and Email -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="form-control">
+          <label class="label">Full Name</label>
+          <input type="text" placeholder="Enter Full Name" class="input input-sm input-bordered w-full" required>
+        </div>
+        <div class="form-control">
+          <label class="label">Email</label>
+          <input type="email" placeholder="Enter Email Address" class="input input-sm input-bordered w-full" required>
+        </div>
+        <div class="form-control">
+          <label class="label">Company Name</label>
+          <input type="email" placeholder="Enter Email Address" class="input input-sm input-bordered w-full" required>
+        </div>
+        <div class="form-control">
+          <label class="label">Company Address</label>
+          <input type="email" placeholder="Enter Email Address" class="input input-sm input-bordered w-full" required>
+        </div>
+      </div>
+              <!-- Upload Profile Picture & CV start -->
+              <div class="form-control">
+                <label class="label">Upload CV</label>
+                <input type="file" class="file-input file-input-bordered file-input-sm w-full" id="cvInput" accept="image/*,.pdf,.doc,.docx">
+                
+                <!-- Small Button to trigger CV preview toggle -->
+                <button type="button" class="btn btn-sm btn-outline btn-primary mt-2 w-1/" id="cvPreviewButton" onclick="togglePreviewCV()">Preview CV</button>
+                
+                <!-- File preview (for images, PDFs, etc.) -->
+                <iframe id="cvPreviewIframe" class="mt-4 w-full h-64 border border-gray-300" style="display: none;"></iframe>
+                <img id="cvPreviewImage" class="mt-4 w-full h-64 border border-gray-300" style="display: none;" />
+                
+                <!-- For non-image/non-PDF files -->
+                <p id="cvFileName" class="mt-4 text-gray-600" style="display: none;"></p>
+              </div>
+              <script>
+                let isPreviewVisible = false; // To track preview toggle status
+              
+                // Toggle preview of the uploaded file
+                function togglePreviewCV() {
+                  const input = document.getElementById('cvInput');
+                  const file = input.files[0];
+                  const cvPreviewIframe = document.getElementById('cvPreviewIframe');
+                  const cvPreviewImage = document.getElementById('cvPreviewImage');
+                  const cvFileName = document.getElementById('cvFileName');
+                  const previewButton = document.getElementById('cvPreviewButton');
+                  
+                  // If no file is selected, do nothing
+                  if (!file) {
+                    alert('Please upload a file first.');
+                    return;
+                  }
+              
+                  // If preview is currently visible, hide it
+                  if (isPreviewVisible) {
+                    cvPreviewIframe.style.display = 'none';
+                    cvPreviewImage.style.display = 'none';
+                    cvFileName.style.display = 'none';
+                    previewButton.textContent = 'Preview CV'; // Change button text back
+                    isPreviewVisible = false;
+                  } 
+                  // If preview is not visible, show it
+                  else {
+                    const fileType = file.type;
+                    
+                    // Handle image files (png, jpg, etc.)
+                    if (fileType.startsWith('image/')) {
+                      const reader = new FileReader();
+                      reader.onload = function(e) {
+                        cvPreviewImage.src = e.target.result;
+                        cvPreviewImage.style.display = 'block';
+                        cvPreviewIframe.style.display = 'none'; // Hide iframe for images
+                        cvFileName.style.display = 'none'; // Hide filename
+                      }
+                      reader.readAsDataURL(file);
+                    } 
+                    // Handle PDFs
+                    else if (fileType === 'application/pdf') {
+                      const reader = new FileReader();
+                      reader.onload = function(e) {
+                        cvPreviewIframe.src = e.target.result;
+                        cvPreviewIframe.style.display = 'block';
+                        cvPreviewImage.style.display = 'none'; // Hide image for PDFs
+                        cvFileName.style.display = 'none'; // Hide filename
+                      }
+                      reader.readAsDataURL(file);
+                    } 
+                    // Handle other file types (e.g., .doc, .docx)
+                    else {
+                      cvFileName.textContent = `Uploaded: ${file.name}`;
+                      cvFileName.style.display = 'block';
+                      cvPreviewIframe.style.display = 'none'; // Hide iframe for non-PDF
+                      cvPreviewImage.style.display = 'none'; // Hide image for non-images
+                    }
+              
+                    previewButton.textContent = 'Close Preview'; // Change button text
+                    isPreviewVisible = true; // Update toggle state
+                  }
+                }
+              </script>      
+          <!-- Upload Profile Picture & CV end -->
+           <!-- New applied job status start -->
+           <div class="form-control">
+            <label class="label">Recruit status</label>
+            <details class="bg-gray-100 p-2 rounded-lg">
+              <summary class="cursor-pointer font-medium text-blue-500">Recruit status</summary>
+              <div class="p-2 border border-gray-300 rounded-lg">
+                <p class="font-medium">Job Title: Software Developer</p>
+                <p>Location: XYZ Corporation, New York</p>
+                <p>Salary: $50,000/year</p>
+                <p>Status: Open</p>
+                <p>Total Hired: 2</p>
+                <p>Total Vacancies: 3</p>
+              </div>
+  
+              <!-- Job Post 2 -->
+              <div class="p-2 border border-gray-300 rounded-lg">
+                <p class="font-medium">Job Title: Marketing Specialist</p>
+                <p>Location: ABC Corp, Chicago</p>
+                <p>Salary: $45,000/year</p>
+                <p>Status: Closed</p>
+                <p>Total Hired: 5</p>
+                <p>Total Vacancies: 0</p>
+              </div>
+            </details>
+          </div>    
+           <!-- New applied job status end -->
+      <!-- Change Password -->
+      <div class="form-control">
+        <label class="label">Change Password</label>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <input type="password" placeholder="Previous Password" class="input input-sm input-bordered w-full" required>
+          <input type="password" placeholder="New Password" class="input input-sm input-bordered w-full" required>
+          <input type="password" placeholder="Confirm New Password" class="input input-sm input-bordered w-full" required>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-control mt-4 ">
+        <button type="submit" class="btn btn-sm btn-primary w-28 p-2 place-content-end ml-auto mt-12">Save Profile</button>
+      </div>      
+    </form>
+  </div>
+</body>
+</html>

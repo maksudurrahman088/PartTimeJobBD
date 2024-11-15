@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobseeker Profile Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+  <style>
+    .bg-custom{
+        background-color: #2c0033;
+    }
+  </style>
+</head>
+<body class="bg-custom pb-9">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-3">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <a href="Home.html" class="text-lg font-semibold">PartTimeJobBD</a>
+      </div>
+      <!-- Profile Info -->
+      <div class="flex items-center space-x-4">
+        
+        <div class="text-sm">
+          <p class="font-medium">Sagor Ahmed</p>
+          <p>sagorahmed11@email.com</p>
+        </div>
+        <img src="./Immages/sagor.jpg" alt="Profile Picture" class="w-8 h-8 rounded-full">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Form -->
+  <div class=" mx-auto mt-10 p-16 bg-white shadow-md rounded-lg max-w-6xl">
+    <form action="#" method="POST" class="space-y-4">
+      <!-- Name and Email -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="form-control">
+          <label class="label">Full Name</label>
+          <input type="text" placeholder="Enter Full Name" class="input input-sm input-bordered w-full" required>
+        </div>
+        <div class="form-control">
+          <label class="label">Email</label>
+          <input type="email" placeholder="Enter Email Address" class="input input-sm input-bordered w-full" required>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="form-control">
+        <label class="label">Address</label>
+        <input type="text" placeholder="Enter Address" class="input input-sm input-bordered w-full" required>
+      </div>
+      <!-- University & Study Group -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="form-control">
+          <label class="label">University/College</label>
+          <input type="text" placeholder="Enter University/College Name" class="input input-sm input-bordered w-full">
+        </div>
+        <div class="form-control">
+          <label class="label">Study Group</label>
+          <input type="text" placeholder="Enter Study Group" class="input input-sm input-bordered w-full">
+        </div>
+      </div>
+              <!-- Upload Profile Picture & CV start -->
+              <div class="form-control">
+                <label class="label">Upload CV</label>
+                <input type="file" class="file-input file-input-bordered file-input-sm w-full" id="cvInput" accept="image/*,.pdf,.doc,.docx">
+                
+                <!-- Small Button to trigger CV preview toggle -->
+                <button type="button" class="btn btn-sm btn-outline btn-primary mt-2 w-1/" id="cvPreviewButton" onclick="togglePreviewCV()">Preview CV</button>
+                
+                <!-- File preview (for images, PDFs, etc.) -->
+                <iframe id="cvPreviewIframe" class="mt-4 w-full h-64 border border-gray-300" style="display: none;"></iframe>
+                <img id="cvPreviewImage" class="mt-4 w-full h-64 border border-gray-300" style="display: none;" />
+                
+                <!-- For non-image/non-PDF files -->
+                <p id="cvFileName" class="mt-4 text-gray-600" style="display: none;"></p>
+              </div>
+              <script>
+                let isPreviewVisible = false; // To track preview toggle status
+              
+                // Toggle preview of the uploaded file
+                function togglePreviewCV() {
+                  const input = document.getElementById('cvInput');
+                  const file = input.files[0];
+                  const cvPreviewIframe = document.getElementById('cvPreviewIframe');
+                  const cvPreviewImage = document.getElementById('cvPreviewImage');
+                  const cvFileName = document.getElementById('cvFileName');
+                  const previewButton = document.getElementById('cvPreviewButton');
+                  
+                  // If no file is selected, do nothing
+                  if (!file) {
+                    alert('Please upload a file first.');
+                    return;
+                  }
+              
+                  // If preview is currently visible, hide it
+                  if (isPreviewVisible) {
+                    cvPreviewIframe.style.display = 'none';
+                    cvPreviewImage.style.display = 'none';
+                    cvFileName.style.display = 'none';
+                    previewButton.textContent = 'Preview CV'; // Change button text back
+                    isPreviewVisible = false;
+                  } 
+                  // If preview is not visible, show it
+                  else {
+                    const fileType = file.type;
+                    
+                    // Handle image files (png, jpg, etc.)
+                    if (fileType.startsWith('image/')) {
+                      const reader = new FileReader();
+                      reader.onload = function(e) {
+                        cvPreviewImage.src = e.target.result;
+                        cvPreviewImage.style.display = 'block';
+                        cvPreviewIframe.style.display = 'none'; // Hide iframe for images
+                        cvFileName.style.display = 'none'; // Hide filename
+                      }
+                      reader.readAsDataURL(file);
+                    } 
+                    // Handle PDFs
+                    else if (fileType === 'application/pdf') {
+                      const reader = new FileReader();
+                      reader.onload = function(e) {
+                        cvPreviewIframe.src = e.target.result;
+                        cvPreviewIframe.style.display = 'block';
+                        cvPreviewImage.style.display = 'none'; // Hide image for PDFs
+                        cvFileName.style.display = 'none'; // Hide filename
+                      }
+                      reader.readAsDataURL(file);
+                    } 
+                    // Handle other file types (e.g., .doc, .docx)
+                    else {
+                      cvFileName.textContent = `Uploaded: ${file.name}`;
+                      cvFileName.style.display = 'block';
+                      cvPreviewIframe.style.display = 'none'; // Hide iframe for non-PDF
+                      cvPreviewImage.style.display = 'none'; // Hide image for non-images
+                    }
+              
+                    previewButton.textContent = 'Close Preview'; // Change button text
+                    isPreviewVisible = true; // Update toggle state
+                  }
+                }
+              </script>      
+          <!-- Upload Profile Picture & CV end -->
+           <!-- New applied job status start -->
+           <div class="form-control">
+            <label class="label">New applied job status</label>
+            <details class="bg-gray-100 p-2 rounded-lg">
+              <summary class="cursor-pointer font-medium text-blue-500">New applied job status</summary>
+              <h1>Job title:Tution </h1>
+              <h2>Location:Basundhara R/A ,Block-D</h2>
+              <h2>Salary:5000 tk</h2>
+              <div class="mt-2 space-y-4 ">
+                <ul class="steps p-12">
+                    <li class="step step-primary mx-3">Applied</li>
+                    <li class="step step-primary mx-3">Selected</li>
+                    <li class="step mx-3">Waiting for Viva</li>
+                    <li class="step mx-3">Confirmed Job</li>
+                  </ul>
+              </div>
+            </details>
+          </div>    
+           <!-- New applied job status end -->
+      <!-- Current jobs start -->
+      <div class="form-control">
+        <label class="label">Current Jobs</label>
+        <details class="bg-gray-100 p-2 rounded-lg">
+          <summary class="cursor-pointer font-medium text-blue-500">View Current Jobs</summary>
+          <div class="mt-2 space-y-4">
+            <!-- Job 1 -->
+            <div class="p-2 border border-gray-300 rounded-lg">
+              <p class="font-medium">Job Title: Software Developer</p>
+              <p>Company: XYZ Corporation</p>
+              <p>Salary: $50,000/year</p>
+              <p>Working Hours: Full-time (9:00 AM - 5:00 PM)</p>
+            </div>
+            
+            <!-- Job 2 -->
+            <div class="p-2 border border-gray-300 rounded-lg">
+              <p class="font-medium">Job Title: Freelance Web Developer</p>
+              <p>Company: Self-employed</p>
+              <p>Salary: $30/hour</p>
+              <p>Working Hours: Part-time (Flexible)</p>
+            </div>
+          </div>
+        </details>
+      </div>
+      <!-- Current jobs end -->
+       <!-- Previous job start -->
+       <div class="form-control">
+        <label class="label">Previous Jobs</label>
+        <details class="bg-gray-100 p-2 rounded-lg">
+          <summary class="cursor-pointer font-medium text-blue-500">View Previous Jobs</summary>
+          <div class="mt-2 space-y-4">
+            <!-- Job 1 -->
+            <div class="p-2 border border-gray-300 rounded-lg">
+              <p class="font-medium">Job Title: Software Developer</p>
+              <p>Company: XYZ Corporation</p>
+              <p>Salary: $50,000/year</p>
+              <p>Working Hours: Full-time (9:00 AM - 5:00 PM)</p>
+            </div>
+            
+            <!-- Job 2 -->
+            <div class="p-2 border border-gray-300 rounded-lg">
+              <p class="font-medium">Job Title: Freelance Web Developer</p>
+              <p>Company: Self-employed</p>
+              <p>Salary: $30/hour</p>
+              <p>Working Hours: Part-time (Flexible)</p>
+            </div>
+          </div>
+        </details>
+      </div>
+       <!-- Previous job end -->
+      <!-- Change Password -->
+      <div class="form-control">
+        <label class="label">Change Password</label>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <input type="password" placeholder="Previous Password" class="input input-sm input-bordered w-full" required>
+          <input type="password" placeholder="New Password" class="input input-sm input-bordered w-full" required>
+          <input type="password" placeholder="Confirm New Password" class="input input-sm input-bordered w-full" required>
+        </div>
+      </div>
+      <!-- Application Tracking & Affiliate Account -->
+      <div class="form-control">
+        <label class="label">Application Tracking & Affiliate Account</label>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="Trackapplication.html" type="button" class="btn btn-sm btn-primary btn-outline w-full">Track Application</a>
+          <a href="AffiliateAccount.html" type="button" class="btn btn-sm btn-outline w-full">Enter Affiliate Account</a>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-control mt-4 ">
+        <button type="submit" class="btn btn-sm btn-primary w-28 p-2 place-content-end ml-auto mt-12">Save Profile</button>
+      </div>      
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses for Career Building</title>
+  <script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Smooth transition on hover */
+    .hover-transition {
+      transition: background-color 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<header>
+  <nav class="text-white px-6 py-4 fixed top-0 w-full z-50 nav">
+    <div class="container mx-auto flex justify-between items-center">  
+      <!-- Logo start -->
+      <div class="text-2xl font-bold text-custom-yellow">
+        <a href="Home.html" className="text-2xl font-bold text-custom-yellow">
+          PartTimeJobBD
+        </a>
+      </div>
+      <!-- Logo end -->
+      <!-- Middle Buttons -->
+      <div class="flex space-x-8">
+        <div class="relative group">
+          <a href="Home.html" className="text-2xl font-bold text-custom-yellow">
+           Overview
+          </a>
+          
+            <div class="absolute bottom-[-4px] left-0 w-full h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
+        </div>
+        <div class="relative group">
+          <a href="Findjobs.html" class="text-white px-4 py-2">Find Jobs</a>
+
+            <div class="absolute bottom-[-4px] left-0 w-full h-0.5 bg-white  scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
+        </div>
+    </div>
+     <!-- Middle Buttons ends -->
+      <!-- Right Buttons -->
+      <div class="space-x-4">
+        <a href="login.html"class="border border-white text-white bg-transparent hover:bg-gray-200 hover:text-black px-4 py-2 rounded transition">Login</a>
+      <a href="signup.html"class=" border  bg-transparent text-custom-yellow hover:bg-gray-200 hover:text-black px-4 py-2 rounded transition">Signup</a>
+      </div>
+     <!-- Right Buttons ends -->
+    </div>
+  </nav>
+</header>
+<body class="bg-gray-50">
+  <!-- Banner Section -->
+  <section class="relative">
+    <div class="h-2/3 flex items-center justify-center">
+      <img src="./Immages/youngsters.jpg" alt="Career Banner" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <h1 class="text-white font-extrabold text-5xl">Build Your Career with Our Courses</h1>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <!-- Categories Section -->
+  <section class="py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Explore Course Categories</h2>
+    <div class="grid grid-cols-3 gap-6 mx-40">
+      <!-- Category Card 1 -->
+      <div class="card bg-white shadow-lg p-6">
+        <img src="./Immages/3.it.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+        <h3 class="text-xl font-semibold">Tech</h3>
+        <p class="text-gray-600">Master the techniques of search engine optimization</p>
+        <button class="btn btn-primary mt-4 w-full hover:bg-gray-300 p-3">Enroll Now</button>
+      </div>
+      <!-- Category Card 2 -->
+      <div class="card bg-white shadow-lg p-6">
+        <img src="./Immages/business.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+        <h3 class="text-xl font-semibold">Business</h3>
+        <p class="text-gray-600">Master the techniques of search engine optimization</p>
+        <button class="btn btn-primary mt-4 w-full hover:bg-gray-300 p-3">Enroll Now</button>
+      </div>
+      <!-- Category Card 3 -->
+      <div class="card bg-white shadow-lg p-6">
+        <img src="./Immages/selfskill.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+        <h3 class="text-xl font-semibold">Soft Skill Development</h3>
+        <p class="text-gray-600">Master the techniques of search engine optimization</p>
+        <button class="btn btn-primary mt-4 w-full hover:bg-gray-300 p-3">Enroll Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Courses Section -->
+  <section class="py-16 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center mb-12">Popular Courses</h2>
+    <div class="grid grid-cols-3 gap-6 mx-40">
+      <!-- Course Card 1 -->
+      <div class="card bg-white shadow-lg p-6">
+        <img src="./Immages/js.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+        <h3 class="text-xl font-semibold">Advanced JavaScript</h3>
+        <p class="text-gray-600">Deep dive into advanced concepts of JavaScript</p>
+        <button class="btn btn-primary mt-4 w-full  hover:bg-gray-300 p-3">Enroll Now</button>
+      </div>
+      <!-- Course Card 2 -->
+      <div class="card bg-white shadow-lg p-6">
+        <img src="./Immages/data science.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+        <h3 class="text-xl font-semibold">Python for Data Science</h3>
+        <p class="text-gray-600">Learn Python in the context of data science</p>
+        <button class="btn btn-primary mt-4 w-full  hover:bg-gray-300 p-3">Enroll Now</button>
+      </div>
+      <!-- Course Card 3 -->
+      <div class="card bg-white shadow-lg p-6">
+        <img src="./Immages/seo.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+        <h3 class="text-xl font-semibold">SEO Masterclass</h3>
+        <p class="text-gray-600">Master the techniques of search engine optimization</p>
+        <button class="btn btn-primary mt-4 w-full hover:bg-gray-300 p-3">Enroll Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Courses Section -->
+  <section class="py-16">
+    <h2 class="text-3xl font-bold text-center mb-5">All Courses</h2>
+    <section class="py-16">
+      <div class="grid grid-cols-3 gap-6 mx-40">
+        <!-- Category Card 1 -->
+        <div class="card bg-white shadow-lg p-6">
+          <img src="./Immages/3.it.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+          <h3 class="text-xl font-semibold">Business</h3>
+          <p class="text-gray-600">Master the techniques of search engine optimization</p>
+          <button class="btn btn-primary mt-4 w-full hover:bg-gray-300 p-3">Enroll Now</button>
+        </div>
+        <!-- Category Card 2 -->
+        <div class="card bg-white shadow-lg p-6">
+          <img src="./Immages/business.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+          <h3 class="text-xl font-semibold">Business</h3>
+          <p class="text-gray-600">Master the techniques of search engine optimization</p>
+          <button class="btn btn-primary mt-4 w-full hover:bg-gray-300 p-3">Enroll Now</button>
+        </div>
+        <!-- Category Card 3 -->
+        <div class="card bg-white shadow-lg p-6">
+          <img src="./Immages/selfskill.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+          <h3 class="text-xl font-semibold">Business</h3>
+          <p class="text-gray-600">Master the techniques of search engine optimization</p>
+          <button class="btn btn-primary mt-4 w-full hover:bg-gray-300 p-3">Enroll Now</button>
+        </div>
+        <div class="card bg-white shadow-lg p-6">
+          <img src="./Immages/js.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+          <h3 class="text-xl font-semibold">Advanced JavaScript</h3>
+          <p class="text-gray-600">Deep dive into advanced concepts of JavaScript</p>
+          <button class="btn btn-primary mt-4 w-full  hover:bg-gray-300 p-3">Enroll Now</button>
+        </div>
+        <!-- Course Card 2 -->
+        <div class="card bg-white shadow-lg p-6">
+          <img src="./Immages/data science.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+          <h3 class="text-xl font-semibold">Python for Data Science</h3>
+          <p class="text-gray-600">Learn Python in the context of data science</p>
+          <button class="btn btn-primary mt-4 w-full  hover:bg-gray-300 p-3">Enroll Now</button>
+        </div>
+        <!-- Course Card 3 -->
+        <div class="card bg-white shadow-lg p-6">
+          <img src="./Immages/seo.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
+          <h3 class="text-xl font-semibold">SEO Masterclass</h3>
+          <p class="text-gray-600">Master the techniques of search engine optimization</p>
+          <button class="btn btn-primary mt-4 w-full hover:bg-gray-300 p-3">Enroll Now</button>
+        </div>
+      </div>
+    </section>
+  </section>
+</body>
+</html>

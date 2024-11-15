@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Post Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .nav {
+      background: #595959 /* linear-gradient(to right,#595959,#2e2e2e); */
+    }
+    .text-custom-yellow {
+      color: #facc15;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header>
+    <!-- Navbar start -->
+    <nav class="text-white px-6 py-4 fixed top-0 w-full z-50 nav">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-2xl font-bold text-white">
+          <a href="Home.html">PartTimeJobBD</a>
+        </div>
+    
+        <!-- Right Buttons -->
+        <div class="space-x-4">
+          <a href="RecruiterProfile.html" class="border border-white text-white bg-transparent hover:bg-gray-200 hover:text-black px-4 py-2 rounded transition">Profile</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar ends -->
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-20">
+    <div class="bg-gradient-to-r from-violet-600 to-purple-500 py-10">
+      <div class="container mx-auto max-w-3xl bg-white shadow-xl rounded-lg p-8">
+        <!-- Page Title -->
+        <h1 class="text-4xl font-extrabold text-violet-600 text-center mb-6">Post a Job</h1>
+        <!-- Decorative Line -->
+        <div class="h-1 w-24 bg-violet-600 mx-auto mb-8 rounded"></div>
+        <!-- Job Post Form -->
+        <form action="#" method="POST" class="space-y-6">
+          <!-- Job Title -->
+          <div>
+            <label for="job-title" class="block text-sm font-medium text-gray-700 mb-2">Job Title</label>
+            <input type="text" id="job-title" name="job-title" placeholder="Enter job title" class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-violet-500 focus:border-violet-500">
+          </div>
+          <!-- Required Skills -->
+          <div>
+            <label for="skills" class="block text-sm font-medium text-gray-700 mb-2">Required Skills</label>
+            <input type="text" id="skills" name="skills" placeholder="E.g., JavaScript, Python, Communication" class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-violet-500 focus:border-violet-500">
+          </div>
+          <!-- Job Hours -->
+          <div>
+            <label for="hours" class="block text-sm font-medium text-gray-700 mb-2">Job Hours</label>
+            <input type="text" id="hours" name="hours" placeholder="E.g., Full-time, Part-time" class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-violet-500 focus:border-violet-500">
+          </div>
+          <!-- Job Location -->
+          <div>
+            <label for="location" class="block text-sm font-medium text-gray-700 mb-2">Job Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-violet-500 focus:border-violet-500">
+          </div>
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button type="submit" class="bg-violet-600 text-white px-8 py-2 rounded shadow-lg hover:bg-violet-700 transition duration-300">
+              Post Job
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

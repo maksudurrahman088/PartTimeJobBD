@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Control Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+  <style>
+    .bg-custom {
+      background-color:  #2c0033;
+    }
+    .collapse-title {
+      color: black !important;
+      font-weight: 600;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .card {
+      border-radius: 0.5rem;
+      border: 1px solid #e5e7eb;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background-color: #f9fafb;
+    }
+    .action-btn {
+      background-color: #4caf50;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+    }
+    .admin-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .cta-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+      border-radius: 0.25rem;
+    }
+    .bgnav{
+     background-color: #b7fa00;
+    }
+  </style>
+</head>
+<body class="bg-custom min-h-screen p-10">
+     <!-- Navbar -->
+  <nav class="bg-purple-300 shadow-md ">
+    <div class="container mx-auto flex justify-between items-center p-3">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <a href="Home.html" class="text-lg font-semibold text-white">PartTimeJobBD</a>
+      </div>
+      <!-- Profile Info -->
+      <div class="flex items-center space-x-4">
+        
+        <div class="text-sm">
+          <p class="font-medium text-white">ADMIN</p>
+        </div>
+        <img src="./Immages/adminLogo.jpg" alt="Profile Picture" class="w-16 h-16 rounded-full mx-auto mb-4">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Navbar ends -->
+  <!-- Admin Dashboard -->
+  <div class="container mx-auto mt-12">
+
+    <!-- Recruiters and Jobseekers Management -->
+    <div class="grid admin-grid mb-8">
+      <!-- Manage Recruiters -->
+      <div class="card">
+        <h2 class="section-title">Manage Recruiters</h2>
+        <div class="collapse collapse-arrow">
+          <input type="checkbox" />
+          <div class="collapse-title">
+            View All Recruiters
+          </div>
+          <div class="collapse-content">
+            <ul class="list-disc list-inside">
+              <li>Company Name: XYZ Corp</li>
+              <li>Address: 123 Business St</li>
+              <li>Email: recruiter@xyz.com</li>
+              <!-- More Recruiters... -->
+            </ul>
+          </div>
+        </div>
+        <div class="mt-4">
+          <button class="cta-btn">Add New Recruiter</button>
+        </div>
+      </div>
+
+      <!-- Manage Jobseekers -->
+      <div class="card">
+        <h2 class="section-title">Manage Jobseekers</h2>
+        <div class="collapse collapse-arrow">
+          <input type="checkbox" />
+          <div class="collapse-title">
+            View All Jobseekers
+          </div>
+          <div class="collapse-content">
+            <ul class="list-disc list-inside">
+              <li>Jobseeker Name: Sagor Ahmed</li>
+              <li>Email: sagor@email.com</li>
+              <li>Affiliate Status: Active</li>
+              <!-- More Jobseekers... -->
+            </ul>
+          </div>
+        </div>
+        <div class="mt-4">
+          <button class="cta-btn">Add New Jobseeker</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interviews & Job Applications -->
+    <div class="grid admin-grid mb-8">
+      <!-- Conduct Interviews -->
+      <div class="card">
+        <h2 class="section-title">Jobseeker Interviews</h2>
+        <div class="collapse collapse-arrow">
+          <input type="checkbox" />
+          <div class="collapse-title">
+            View Scheduled Interviews
+          </div>
+          <div class="collapse-content">
+            <ul class="list-disc list-inside">
+              <li>Interview with: Sagor Ahmed</li>
+              <li>Date: Oct 5, 2024</li>
+              <li>Status: Pending</li>
+              <!-- More interviews... -->
+            </ul>
+          </div>
+        </div>
+        <div class="mt-4">
+          <button class="cta-btn">Schedule New Interview</button>
+        </div>
+      </div>
+
+      <!-- Job Applications -->
+      <div class="card">
+        <h2 class="section-title">Job Applications</h2>
+        <div class="collapse collapse-arrow">
+          <input type="checkbox" />
+          <div class="collapse-title">
+            View Applied Candidates
+          </div>
+          <div class="collapse-content">
+            <ul class="list-disc list-inside">
+              <li>Name: Sagor Ahmed - Job Title: Software Developer</li>
+              <li class="mb-1">Status: Applied</li>
+              <li>Action: 
+                <button class="action-btn px-3 py-1 text-sm">Select</button>
+    <button class="action-btn bg-red-500 px-3 py-1 text-sm">Delete</button>
+              </li>
+              <!-- More candidates... -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Affiliate Management -->
+    <div class="card mb-8">
+      <h2 class="section-title">Affiliate Management</h2>
+      <div class="collapse collapse-arrow">
+        <input type="checkbox" />
+        <div class="collapse-title">
+          View Active Affiliates
+        </div>
+        <div class="collapse-content">
+          <ul class="list-disc list-inside">
+            <li>Affiliate Name: Sagor Ahmed</li>
+            <li>Status: Active</li>
+            <li>Commission: 10%</li>
+            <!-- More affiliates... -->
+          </ul>
+        </div>
+      </div>
+      <div class="mt-4">
+        <button class="cta-btn">Manage Affiliates</button>
+      </div>
+    </div>
+
+    <!-- Earnings Section -->
+    <div class="grid admin-grid mb-8">
+      <!-- Job Application Earnings -->
+      <div class="card">
+        <h2 class="section-title">Earnings from Job Applications</h2>
+        <h2 class="font-bold text-2xl">Total - <span>1100050</span> TK</h2>
+        <div class="collapse collapse-arrow">
+          <input type="checkbox" />
+          <div class="collapse-title">
+            View Job Application Earnings
+          </div>
+          
+          <div class="collapse-content">
+            <ul class="list-disc list-inside">
+              <li>Earnings from Sagor Ahmed's Application: $200</li>
+              <li>Earnings from XYZ Corp: $1,000</li>
+              <!-- More earnings history... -->
+            </ul>
+          </div>
+        </div>
+        <div class="mt-4">
+          <button class="cta-btn">View Full Earnings Report</button>
+        </div>
+      </div>
+
+      <!-- Affiliate Earnings -->
+      <div class="card">
+        <h2 class="section-title">Earnings from Affiliates</h2>
+        <h2 class="font-bold text-2xl">Total - <span>56090</span> TK</h2>
+        <div class="collapse collapse-arrow">
+          <input type="checkbox" />
+          <div class="collapse-title">
+            View Affiliate Earnings
+          </div>
+          <div class="collapse-content">
+            <ul class="list-disc list-inside">
+              <li>Earnings from Affiliate Sagor Ahmed: $50</li>
+              <li>Earnings from Affiliate John Doe: $100</li>
+              <!-- More affiliate earnings history... -->
+            </ul>
+          </div>
+        </div>
+        <div class="mt-4">
+          <button class="cta-btn">View Full Affiliate Earnings Report</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
