@@ -19,7 +19,7 @@
     <div class="container mx-auto flex justify-between items-center p-3">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
-        <span class="text-lg font-semibold">PartTimeJobBD</span>
+        <a href="Home.html" class="text-lg font-semibold">PartTimeJobBD</a>
       </div>
       <!-- Profile Info -->
          <!-- Middle Buttons -->
@@ -64,21 +64,7 @@
           <input type="email" placeholder="Enter Email Address" class="input input-sm input-bordered w-full" required>
         </div>
       </div>
-              <!-- Upload Profile Picture & CV start -->
-              <div class="form-control">
-                <label class="label">Upload CV</label>
-                <input type="file" class="file-input file-input-bordered file-input-sm w-full" id="cvInput" accept="image/*,.pdf,.doc,.docx">
-                
-                <!-- Small Button to trigger CV preview toggle -->
-                <button type="button" class="btn btn-sm btn-outline btn-primary mt-2 w-1/" id="cvPreviewButton" onclick="togglePreviewCV()">Preview CV</button>
-                
-                <!-- File preview (for images, PDFs, etc.) -->
-                <iframe id="cvPreviewIframe" class="mt-4 w-full h-64 border border-gray-300" style="display: none;"></iframe>
-                <img id="cvPreviewImage" class="mt-4 w-full h-64 border border-gray-300" style="display: none;" />
-                
-                <!-- For non-image/non-PDF files -->
-                <p id="cvFileName" class="mt-4 text-gray-600" style="display: none;"></p>
-              </div>
+      
               <script>
                 let isPreviewVisible = false; // To track preview toggle status
               
