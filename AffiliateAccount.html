@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Affiliate Account</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Custom fade-in animation */
     @keyframes fade-in {
@@ -23,27 +23,25 @@
     }
   </style>
 </head>
-<header>
-    <header>
-        <!-- Navbar start -->
-        <nav class=" bg-gray-700  px-6 py-4 fixed top-0 w-full z-50 nav">
-          <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo -->
-            <div class="text-2xl font-bold text-white">
-              <a href="Home.html">PartTimeJobBD</a>
-            </div>
-        
-            <!-- Right Buttons -->
-            <div class="space-x-4">
-              <a href="JobseekerProfile.html" class="border border-white text-white bg-transparent hover:bg-gray-200 hover:text-black px-4 py-2 rounded transition">Profile</a>
-            </div>
-          </div>
-        </nav>
-        <!-- Navbar ends -->
-      </header>
-</header>
 <body data-theme="cupcake">
-  <div class="container mx-auto mt-10 p-6">
+  <!-- Navbar -->
+  <header>
+    <nav class="bg-gray-700 px-6 py-4 fixed top-0 w-full z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-2xl font-bold text-white">
+          <a href="Home.html">PartTimeJobBD</a>
+        </div>
+        <!-- Right Buttons -->
+        <div class="space-x-4">
+          <a href="JobseekerProfile.html" class="border border-white text-white bg-transparent hover:bg-gray-200 hover:text-black px-4 py-2 rounded transition">Profile</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container mx-auto mt-20 p-6">
     <!-- Page Title -->
     <h1 class="text-4xl font-extrabold text-center text-gray-800 fade-in">Affiliate Account</h1>
     <p class="text-center text-gray-600 mt-2 mb-10">Manage and share your courses seamlessly</p>
@@ -63,44 +61,31 @@
         <button type="submit" class="btn btn-sm btn-outline btn-primary mt-2 w-full">Upload Course</button>
       </form>
     </div>
-<!-- Open the modal using ID.showModal() method -->
-<button class="btn" onclick="my_modal_5.showModal()">open modal</button>
-<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box">
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">Press ESC key or click the button below to close</p>
-    <div class="modal-action">
-      <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+
     <!-- Course Display Section -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Example Course Card -->
-      <div class="card bg-white shadow-lg p-6 fade-in">
+      <!-- Example Course Card 1 -->
+      <div class="card bg-white shadow-lg p-6">
         <img src="./Immages/3.it.jpg" alt="Course Logo" class="w-full h-32 object-cover mb-4">
-        <h3 class="text-xl font-semibold">Machine Learning</h3>
-        <p class="text-gray-600">Master the techniques of Machine learning</p>
-        <!-- Open the modal using ID.showModal() method -->
-<button class="btn" onclick="my_modal_5.showModal()">open modal</button>
-<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box">
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">Press ESC key or click the button below to close</p>
-    <div class="modal-action">
-      <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+        <h3 class="text-xl font-semibold">Tech</h3>
+        <p class="text-gray-600">Master the techniques of search engine optimization</p>
+        
+        <!-- Modal Trigger -->
+        <button class="btn" onclick="document.getElementById('my_modal_1').showModal()">Delete</button>
+        
+        <!-- Modal -->
+        <dialog id="my_modal_1" class="modal">
+          <div class="modal-box">
+            <h3 class="text-lg font-bold">Hello!</h3>
+            <p class="py-4">Press ESC key or click the button below to close</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </div>
-
-      <!-- Add more course cards dynamically here -->
     </div>
   </div>
 </body>
